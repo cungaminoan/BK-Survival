@@ -274,6 +274,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1aa7bf25b446c4baa8e0af352f470d1b, type: 3}
+--- !u!1 &1475356272 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7421427191236397877, guid: 409208d81af623144b2f694bc36c6bf2, type: 3}
+  m_PrefabInstance: {fileID: 7421427190230312285}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1475356273 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7421427191236397876, guid: 409208d81af623144b2f694bc36c6bf2, type: 3}
+  m_PrefabInstance: {fileID: 7421427190230312285}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1475356274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475356272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93564780e567ae94ebc87ab2084a600c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRoot: {fileID: 1873488634}
+  lookRoot: {fileID: 1475356273}
+  invert: 0
+  canUnlock: 1
+  sensivity: 5
+  smoothStep: 10
+  smoothWeight: 0.4
+  rollAngle: 0
+  rollSpeed: 3
+  defaultLookLimits: {x: -70, y: 80}
+--- !u!4 &1873488634 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7421427190174938735, guid: 409208d81af623144b2f694bc36c6bf2, type: 3}
+  m_PrefabInstance: {fileID: 7421427190230312285}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7421427190230312285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -281,10 +318,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6588137520233686242, guid: 409208d81af623144b2f694bc36c6bf2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7421427190174938733, guid: 409208d81af623144b2f694bc36c6bf2, type: 3}
       propertyPath: m_Name
       value: Player
@@ -332,10 +365,6 @@ PrefabInstance:
     - target: {fileID: 7421427190174938735, guid: 409208d81af623144b2f694bc36c6bf2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8345134391066365130, guid: 409208d81af623144b2f694bc36c6bf2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 409208d81af623144b2f694bc36c6bf2, type: 3}
