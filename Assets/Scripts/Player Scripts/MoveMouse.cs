@@ -42,6 +42,7 @@ public class MoveMouse : MonoBehaviour
     {
         LockAndUnlockCursor();
         LookAround();
+        FreezeLook();
     }
 
     void LockAndUnlockCursor()
@@ -73,6 +74,14 @@ public class MoveMouse : MonoBehaviour
         lookRoot.localRotation = Quaternion.Euler(lookAngle.x, 0f, 0f);
         playerRoot.localRotation = Quaternion.Euler(0f, lookAngle.y, 0f);
 
+    }
+    void FreezeLook()
+    {
+        if(Cursor.lockState == CursorLockMode.None)
+        {
+            lookRoot.localRotation = Quaternion.Euler(0f, 0f, 0f);
+            playerRoot.localRotation = Quaternion.Euler(0f,0f,0f);
+        }
     }
 }
 
