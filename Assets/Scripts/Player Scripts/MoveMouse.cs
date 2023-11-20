@@ -24,12 +24,16 @@ public class MoveMouse : MonoBehaviour
     private Vector2 defaultLookLimits = new Vector2 (-70, 80f);
     private Vector2 lookAngle;
     private Vector2 currentMouseLook;
+    private Quaternion lastValidPlayerRotation;
+    private Quaternion lastValidLookRotation;
     private Vector2 smoothMove;
     private float currentRollAngle;
     private int lastLookFrame;
     // Start is called before the first frame update
     void Start()
     {
+        lastValidPlayerRotation = playerRoot.localRotation;
+        lastValidLookRotation = lookRoot.localRotation;
         Cursor.lockState = CursorLockMode.Locked;
         if(Cursor.lockState == CursorLockMode.Locked)
         {
@@ -77,11 +81,23 @@ public class MoveMouse : MonoBehaviour
     }
     void FreezeLook()
     {
-        if(Cursor.lockState == CursorLockMode.None)
+        if (!IsCursorLocked())
         {
-            lookRoot.localRotation = Quaternion.Euler(0f, 0f, 0f);
-            playerRoot.localRotation = Quaternion.Euler(0f,0f,0f);
+            // Apply last valid rotations when cursor is unlocked
+            lookRoot.localRotation = lastValidLookRotation;
+            playerRoot.localRotation = lastValidPlayerRotation;
         }
+        else
+        {
+            // Update last valid rotations when cursor is locked
+            lastValidLookRotation = lookRoot.localRotation;
+            lastValidPlayerRotation = playerRoot.localRotation;
+        }
+    }
+
+    bool IsCursorLocked()
+    {
+        return Cursor.lockState == CursorLockMode.Locked;
     }
 }
 
