@@ -40,9 +40,9 @@ public class MoveMouse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        LockAndUnlockCursor();
-        LookAround();
-        FreezeLook();
+        this.LockAndUnlockCursor();
+        this.LookAround();
+        this.FreezeLook();
     }
 
     void LockAndUnlockCursor()
