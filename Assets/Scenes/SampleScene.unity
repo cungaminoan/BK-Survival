@@ -300,17 +300,37 @@ MonoBehaviour:
   lookRoot: {fileID: 1475356273}
   invert: 0
   canUnlock: 1
-  sensivity: 5
+  sensivity: 2
   smoothStep: 10
   smoothWeight: 0.4
-  rollAngle: 0
+  rollAngle: 10
   rollSpeed: 3
   defaultLookLimits: {x: -70, y: 80}
+--- !u!1 &1644528551 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7421427190174938733, guid: 409208d81af623144b2f694bc36c6bf2, type: 3}
+  m_PrefabInstance: {fileID: 7421427190230312285}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1873488634 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7421427190174938735, guid: 409208d81af623144b2f694bc36c6bf2, type: 3}
   m_PrefabInstance: {fileID: 7421427190230312285}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1873488635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644528551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 388a3cab9a91c6a4ab45fb1a95c697d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprintSpeed: 7
+  normalSpeed: 5
+  crouchSpeed: 2
 --- !u!1001 &7421427190230312285
 PrefabInstance:
   m_ObjectHideFlags: 0
