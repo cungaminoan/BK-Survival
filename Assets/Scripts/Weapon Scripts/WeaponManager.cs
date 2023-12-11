@@ -53,7 +53,7 @@ public class WeaponManager : MonoBehaviour
         currentWeaponIndex = weaponIndex;
     }
 
-    public WeaponHandler GetWeaponHandler()
+    public WeaponHandler GetCurrentSelectedWeapon()
     {
         return weapons[currentWeaponIndex];
     }

@@ -729,6 +729,39 @@ MonoBehaviour:
   sprintSpeed: 7
   normalSpeed: 5
   crouchSpeed: 2
+--- !u!114 &1873488638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644528551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8446639e04cfe94e88c781ba952f6af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 760576426}
+  - {fileID: 7421427190230312296}
+  - {fileID: 1122730266}
+  - {fileID: 7421427190230312294}
+  - {fileID: 7421427190230312292}
+  - {fileID: 1102880501}
+--- !u!114 &1873488639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644528551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d1f9a1640876cc43b12114ad518e660, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 15
+  damage: 20
 --- !u!1001 &7421427190230312285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -744,6 +777,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 659d7e0cedabcd949af77748338837e1, type: 2}
+    - target: {fileID: 4310799905979600522, guid: 409208d81af623144b2f694bc36c6bf2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6588137520224196408, guid: 409208d81af623144b2f694bc36c6bf2, type: 3}
       propertyPath: m_Controller
       value: 
@@ -800,10 +837,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8345134391066365130, guid: 409208d81af623144b2f694bc36c6bf2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8345134391075897108, guid: 409208d81af623144b2f694bc36c6bf2, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 5421bd83faee77c4296ba87c0fa08e8f, type: 2}
+    - target: {fileID: 9088520417523573390, guid: 409208d81af623144b2f694bc36c6bf2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9088520417523573390, guid: 409208d81af623144b2f694bc36c6bf2, type: 3}
+      propertyPath: m_TagString
+      value: Axe
+      objectReference: {fileID: 0}
     - target: {fileID: 9088520417533088064, guid: 409208d81af623144b2f694bc36c6bf2, type: 3}
       propertyPath: m_Controller
       value: 
