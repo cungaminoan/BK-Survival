@@ -8,16 +8,31 @@ public class PlayerAttack : MonoBehaviour
     public float fireRate = 15f;
     private float nextTimeToFire;
     public float damage = 20f;
+
+    private Animator zoomCameraAnimation;
+    private bool zoom;
+    private Camera mainCam;
+    private GameObject crosshair;
+    private bool isAiming;
+
+    private void Awake()
+    {
+        weaponManager = GetComponent<WeaponManager>();
+        zoomCameraAnimation = transform.Find(Tags.LOOK_ROOT).transform.Find(Tags.ZOOM_CAMERA).GetComponent<Animator>();
+        crosshair = GameObject.FindWithTag(Tags.CROSSHAIR);
+        mainCam = Camera.main;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        weaponManager = GetComponent<WeaponManager>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
         this.WeaponShoot();
+        this.ZoomInAndOut();
     }
 
     protected void WeaponShoot()
@@ -45,8 +60,51 @@ public class PlayerAttack : MonoBehaviour
                 }
                 else
                 {
+                    if (isAiming)
+                    {
+                        weaponManager.GetCurrentSelectedWeapon().ShootAnimation();
+                        if(weaponManager.GetCurrentSelectedWeapon().bulletType == WeaponBulletType.ARROW)
+                        {
 
+                        }
+                        else if(weaponManager.GetCurrentSelectedWeapon().bulletType == WeaponBulletType.SPEAR)
+                        {
+
+                        }
+                    }
                 }
+            }
+        }
+    }
+
+    private void ZoomInAndOut()
+    {
+        if(weaponManager.GetCurrentSelectedWeapon().weaponAim == WeaponAim.AIM)
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                zoomCameraAnimation.Play(AnimationTags.ZOOM_IN_ANIM);
+                crosshair.SetActive(false);
+            }
+
+            if (Input.GetMouseButtonUp(1))
+            {
+                zoomCameraAnimation.Play(AnimationTags.ZOOM_OUT_ANIM);
+                crosshair.SetActive(true);
+            }
+        }
+
+        if(weaponManager.GetCurrentSelectedWeapon().weaponAim == WeaponAim.SELF_AIM)
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                weaponManager.GetCurrentSelectedWeapon().Aim(true);
+                isAiming = true;
+            }
+            if (Input.GetMouseButtonUp(1))
+            {
+                weaponManager.GetCurrentSelectedWeapon().Aim(false);
+                isAiming = false;
             }
         }
     }
