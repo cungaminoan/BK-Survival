@@ -20,12 +20,22 @@ public class EnemyController : MonoBehaviour
     public float waitBeforeAttack = 2f;
     private float attackTimer;
     private Transform target;
+    public GameObject attackPoint;
 
     private void Awake()
     {
         enemyAnimator = GetComponent<EnemyAnimator>();
         navAgent = GetComponent<NavMeshAgent>();
-        target = GameObject.FindWithTag(Tags.PLAYER_TAG).transform;
+
+        GameObject player = GameObject.FindWithTag(Tags.PLAYER_TAG);
+        if (player != null)
+        {
+            target = player.transform;
+        }
+        else
+        {
+            Debug.LogError("Player GameObject not found!");
+        }
     }
     // Start is called before the first frame update
     void Start()
@@ -142,4 +152,19 @@ public class EnemyController : MonoBehaviour
         navAgent.SetDestination(navHit.position);
     }
 
+    protected void TurnOnAttackPoint()
+    {
+        attackPoint.SetActive(true);
+    }
+
+    protected void TurnOffAttackPoint()
+    {
+        if (attackPoint.activeInHierarchy)
+        {
+            attackPoint.SetActive(false);
+        }
+    }
+
+    public EnemyState EnemyState { get; set; }
+    
 }

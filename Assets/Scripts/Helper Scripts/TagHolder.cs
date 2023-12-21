@@ -24,7 +24,7 @@ public class AnimationTags
     public const string WALK_PARAMETER = "Walk";
     public const string RUN_PARAMETER = "Run";
     public const string ATTACK_PARAMETER = "Attack";
-    public const string DEAD_TRIGGER = "Dead";
+    public const string DEAD_TRIGGER = "Death";
 }
 
 public class Tags
