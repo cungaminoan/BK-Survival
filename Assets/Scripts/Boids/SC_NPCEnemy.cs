@@ -17,4 +17,11 @@ public class SC_NPCEnemy : MonoBehaviour, IEntity
             GetComponent<Rigidbody>().isKinematic = true;
         }
     }
+
+    public void DestroyBoids()
+    {
+        es.EnemyEliminated(this);
+        Destroy(gameObject);
+        //gameObject.SetActive(false);
+    }
 }

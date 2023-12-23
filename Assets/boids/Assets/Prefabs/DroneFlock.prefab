@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6901760555124313841}
   m_Layer: 0
   m_Name: DroneFlock
-  m_TagString: Untagged
+  m_TagString: Boids
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,10 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8c18324a51d3054e8fc592a0503ddff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcHP: 10
-  knockAwayForce: 20
   es: {fileID: 0}
-  playerTransform: {fileID: 0}
 --- !u!54 &6901760555124313841
 Rigidbody:
   m_ObjectHideFlags: 0

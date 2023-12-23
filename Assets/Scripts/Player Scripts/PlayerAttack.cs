@@ -139,6 +139,10 @@ public class PlayerAttack : MonoBehaviour
             {
                 hit.transform.GetComponent<HealthScript>().ApplyDamage(damage);
             }
+            else if(hit.transform.tag == Tags.BOIDS_TAG)
+            {
+                hit.transform.GetComponent<SC_NPCEnemy>().DestroyBoids();
+            }
         }
     }
 }

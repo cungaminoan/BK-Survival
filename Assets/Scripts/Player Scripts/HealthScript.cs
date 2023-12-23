@@ -74,7 +74,8 @@ public class HealthScript : MonoBehaviour
             navAgent.enabled = false;
             enemyAnimator.enabled = false;
             StartCoroutine(DeadSound());
-            gameObject.SetActive(false);
+            Destroy(gameObject);
+            //gameObject.SetActive(false);
 
         }
 

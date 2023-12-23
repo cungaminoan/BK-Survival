@@ -79,7 +79,6 @@ public class PlayerSprintAndCrouch : MonoBehaviour
                 playerFootsteps.maxVolume = maximumWalkVolume;
                 playerFootsteps.minVolume = minimumWalkVolume;
             }
-            Debug.Log("code run  here bro");
             playerStats.DisplayStaminaStats(sprintValue);
         }
         else

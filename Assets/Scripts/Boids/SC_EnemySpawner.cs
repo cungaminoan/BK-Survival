@@ -29,7 +29,6 @@ public class SC_EnemySpawner : MonoBehaviour
         SC_NPCEnemy npc = droneEnemy.GetComponent<SC_NPCEnemy>();
         npc.es = this;
         FlockManager.FM.allFish.Add(droneEnemy);
-
         totalEnemiesSpawned++;
     }
 
