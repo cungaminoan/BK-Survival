@@ -21,6 +21,7 @@ public class EnemyController : MonoBehaviour
     private float attackTimer;
     private Transform target;
     public GameObject attackPoint;
+    private EnemyAudio enemyAudio;
 
     private void Awake()
     {
@@ -36,6 +37,7 @@ public class EnemyController : MonoBehaviour
         {
             Debug.LogError("Player GameObject not found!");
         }
+        enemyAudio = GetComponentInChildren<EnemyAudio>();
     }
     // Start is called before the first frame update
     void Start()
@@ -85,6 +87,7 @@ public class EnemyController : MonoBehaviour
         {
             enemyAnimator.Walk(false);
             enemyState = EnemyState.CHASE;
+            enemyAudio.PlayScreamSound();
         }
     }
 
@@ -133,6 +136,7 @@ public class EnemyController : MonoBehaviour
         {
             enemyAnimator.Attack();
             attackTimer = 0f;
+            enemyAudio.PlayAttackSound();
 
         }
         if (Vector3.Distance(transform.position, target.position)

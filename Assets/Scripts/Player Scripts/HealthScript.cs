@@ -13,6 +13,7 @@ public class HealthScript : MonoBehaviour
     public float health = 100f;
     public bool isPlayer, isBoar, isCannibal;
     public bool isDead;
+    private EnemyAudio enemyAudio;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class HealthScript : MonoBehaviour
             enemyAnimator = GetComponent<EnemyAnimator>();
             enemyController = GetComponent<EnemyController>();
             navAgent = GetComponent <NavMeshAgent> ();
+            enemyAudio = GetComponentInChildren<EnemyAudio>();
         }
 
         if (isPlayer)
@@ -69,8 +71,7 @@ public class HealthScript : MonoBehaviour
             enemyController.enabled = false;
             navAgent.enabled = false;
             enemyAnimator.enabled = false;
-            
-
+            StartCoroutine(DeadSound());
 
         }
 
@@ -81,6 +82,7 @@ public class HealthScript : MonoBehaviour
             enemyController.enabled = false;
             enemyAnimator.Dead();
             Debug.Log("this enemiy is dead");
+            StartCoroutine(DeadSound());
 
         }
 
@@ -115,5 +117,11 @@ public class HealthScript : MonoBehaviour
     private void TurnOffGameObject()
     {
         gameObject.SetActive(false);
+    }
+
+    IEnumerator DeadSound()
+    {
+        yield return new WaitForSeconds(0.3f);
+        enemyAudio.PlayDeadSound();
     }
 }
