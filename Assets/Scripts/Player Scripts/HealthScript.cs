@@ -14,6 +14,7 @@ public class HealthScript : MonoBehaviour
     public bool isPlayer, isBoar, isCannibal;
     public bool isDead;
     private EnemyAudio enemyAudio;
+    private PlayerStats playerStats;
 
     private void Awake()
     {
@@ -27,7 +28,7 @@ public class HealthScript : MonoBehaviour
 
         if (isPlayer)
         {
-
+            playerStats = GetComponent<PlayerStats>();
         }
     }
   
@@ -39,6 +40,7 @@ public class HealthScript : MonoBehaviour
         health -= damage;
         if (isPlayer)
         {
+            playerStats.DisplayHealthStats(health);
             if (health <= 0)
             {
                 this.PlayerDied();
@@ -72,6 +74,7 @@ public class HealthScript : MonoBehaviour
             navAgent.enabled = false;
             enemyAnimator.enabled = false;
             StartCoroutine(DeadSound());
+            gameObject.SetActive(false);
 
         }
 
