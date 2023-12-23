@@ -16,6 +16,7 @@ public class PlayerStats : MonoBehaviour
 
     public void DisplayStaminaStats(float staminaValue)
     {
+        Debug.Log("code run here");
         staminaValue /= 100f;
         staminaStats.fillAmount = staminaValue;
     }
