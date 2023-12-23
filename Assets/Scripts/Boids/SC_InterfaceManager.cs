@@ -1,0 +1,4 @@
+﻿//Entity interafce
+interface IEntity
+{ 
+}
