@@ -14,7 +14,4 @@ public class PlayerAxeWooshSound : MonoBehaviour
         audioSource.clip = wooshSound[Random.Range(0, wooshSound.Length)];
         audioSource.Play();
     }
-
-
-
 }

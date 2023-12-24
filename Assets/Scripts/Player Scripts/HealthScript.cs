@@ -57,6 +57,7 @@ public class HealthScript : MonoBehaviour
 
             if (health <= 0)
             {
+                Debug.Log("code run here");
                 this.PlayerDied();
                 isDead = true;
             }
@@ -75,8 +76,7 @@ public class HealthScript : MonoBehaviour
             enemyAnimator.enabled = false;
             StartCoroutine(DeadSound());
             Destroy(gameObject);
-            //gameObject.SetActive(false);
-
+            EnemyManager.instance.EnemyDied(true);
         }
 
         if (isBoar)
@@ -87,7 +87,7 @@ public class HealthScript : MonoBehaviour
             enemyAnimator.Dead();
             Debug.Log("this enemiy is dead");
             StartCoroutine(DeadSound());
-
+            EnemyManager.instance.EnemyDied(false);
         }
 
         if (isPlayer)
@@ -96,7 +96,7 @@ public class HealthScript : MonoBehaviour
             for(int i = 0; i < enemies.Length; i++)
             {
                 enemies[i].GetComponent<EnemyController>().enabled = false;
-
+                EnemyManager.instance.StopSpawning();
                 GetComponent<PlayerMovement>().enabled = false;
                 GetComponent<PlayerAttack>().enabled = false;
                 GetComponent<WeaponManager>().GetCurrentSelectedWeapon().gameObject.SetActive(false);
