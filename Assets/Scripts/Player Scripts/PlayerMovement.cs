@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -28,29 +28,30 @@ public class PlayerMovement : MonoBehaviour
         MoveThePlayer();
     }
 
-     void MoveThePlayer()
+    void MoveThePlayer()
     {
         moveDirection = new Vector3(
-            Input.GetAxis(Axis.HORIZONTAL), 0f, Input.GetAxis(Axis.VERTICAL));
+        Input.GetAxis(Axis.HORIZONTAL), 0f, Input.GetAxis(Axis.VERTICAL));
         moveDirection = transform.TransformDirection(moveDirection);
-        moveDirection *= speed*Time.deltaTime;
+        moveDirection *= speed * Time.deltaTime;
         ApplyGravity();
         characterController.Move(moveDirection);
     }
 
     void ApplyGravity()
-   {
+    {
         verticalVelocity -= gravity * Time.deltaTime;
-        PlayerJump();  
+        PlayerJump();
         moveDirection.y = verticalVelocity * Time.deltaTime;
-   }
+    }
 
     void PlayerJump()
     {
-        if(characterController.isGrounded && Input.GetKeyDown(KeyCode.Space))
+        if (characterController.isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             verticalVelocity = jumpForce;
             Debug.Log("jump");
         }
     }
+
 }
